@@ -1,2 +1,2 @@
 # Aplicaciones-WEB-DJANGO
-Pequeñas Apps de CRUD, Formularios y POST en DJANGO (PYTHON)
+Pequeñas Apps de CRUD, API-REST, Formularios y POST en DJANGO (PYTHON)
