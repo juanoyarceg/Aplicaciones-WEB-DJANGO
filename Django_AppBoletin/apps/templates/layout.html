@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-compatible" content="ie=edge">
+
+
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	<script type="text/javascript" src="{% static 'jstxt/nicEdit.js' %}" ></script>
+
+	<script type="text/javascript">
+		bkLib.onDomLoaded(function() {
+			new nicEditor({buttonsList:
+				[
+					'bold',
+					'italic',
+					'underline',
+					'left',
+					'center',
+					'right',
+					'justify',
+					'ul',
+					'ol',
+					'link',
+					'unlink',
+					'html'
+				]
+			});.panelInstance('id_detalle');
+		});
+		alert("Error");
+	</script>
+
+	<title>Boletin</title>
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-primary"> 
+			<div class="panel-heading">
+				{% block top %}
+				{% endblock top %}
+			</div>
+			<div class="panel-body">
+				{% block body %}
+				{% endblock body %}
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

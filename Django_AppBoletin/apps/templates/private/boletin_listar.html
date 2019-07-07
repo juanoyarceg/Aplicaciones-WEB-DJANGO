@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block top %}
+<h2>Noticias / Eventos</h2>
+{% endblock top %}
+
+{% block body %}
+	<p>
+		<a href="{% url 'boletin_crear' %}">Crear</a>
+	</p>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr class="info">
+				<td>Título</td>
+				<td>Resumen</td>
+				<td>Fecha</td>
+				<td>Tipo</td>
+				<td></td>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in object_list %}
+				<tr>
+					<td>{{ item.titulo }}</td>
+					<td>{{ item.resumen }}</td>
+					<td>{{ item.fecha }}</td>
+					<td>
+						{% if item.tipo == 'N' %}
+							Noticias
+						{% else %}
+							Eventos
+						{% endif %}
+					</td>
+					<td>
+						<a href="{% url 'boletin_editar' pk=item.id %}">Editar</a>
+					</td>
+					<td>
+						<a href="{% url 'boletin_eliminar' pk=item.id %}">Eliminar</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock body %}

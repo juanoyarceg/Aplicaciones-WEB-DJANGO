@@ -1,0 +1,17 @@
+{% extends 'posts/base.html' %}
+{% block content %}
+{% load static %}
+<br><br><br>
+<div class="feeds">
+	{% for result in results %}
+		<h3>{{result.titulo}}</h3>
+		<br>
+		Autor: {{result.autor}}
+		<br>
+		<p id="{{result.id}}">
+			{{result.contenido}}
+		</p>
+		<hr>
+	{% endfor %}
+</div>
+{% endblock %}

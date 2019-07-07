@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block top %}
+<h2>Crear</h2>
+{% endblock top %}
+
+{% block body %}
+	<form action="" method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="btn btn-primary">Grabar</button>
+	</form>
+
+	<p>
+		<a href="{% url 'boletin_listar' %}">Cancelar</a>
+	</p>
+{% endblock body %}

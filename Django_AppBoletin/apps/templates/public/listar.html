@@ -1,0 +1,23 @@
+{% extends 'playout.html' %}
+
+{% block body %}
+	<div class="row">
+		{% for item in object_list %}
+			<div class="col-md-4">
+				<div class="panel">
+					<p>{{ item.titulo }}</p>
+					<p>{{ item.fecha }}</p>
+					<p>{{ item.resumen }}</p>
+					<p>{{ item.tipo }}</p>
+					<p>
+						<a href="{% url 'detalle' pk=item.id %}">Leer más</a>
+					</p>
+				</div>
+			</div>
+			{% if forloop.counter|divisibleby:3 %}
+				</div>
+				<div class="row">
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endblock %}

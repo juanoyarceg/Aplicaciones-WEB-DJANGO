@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block top %}
+<h2>Eliminar</h2>
+{% endblock top %}
+
+{% block body %}
+	<form action="" method="POST">
+		{% csrf_token %}
+		<h2>Desea eliminar {{ object.titulo }}</h2>
+		<button type="submit">Eliminar</button>
+	</form>
+
+	<p>
+		<a href="{% url 'boletin_listar' %}">Cancelar</a>
+	</p>
+{% endblock body %}
